@@ -19,27 +19,27 @@ with open('MSES/blade.naca_bli','w') as f:
     f.write('\n {0:5} {1:5} {2:5} {3:5}'.format(xinl, xout,ybot,ytop)) 
 
 
-#nacelle 
-for i in arange(len(x)-1,-1,-1):
-    f.write('\n{0:9.6f5} {1:9.6f}'.format((x[i]+4)/5, -yt[i]/5+0.18))
-for i in arange(1,len(x)):
-    f.write('\n{0:9.6f} {1:9.6f}'.format((x[i]+4)/5, yt[i]/5+0.18))
+    #nacelle 
+    for i in arange(len(x)-1,-1,-1):
+        f.write('\n{0:9.6f} {1:9.6f}'.format((x[i]+4)/5, -yt[i]/5+0.18))
+    for i in arange(1,len(x)):
+        f.write('\n{0:9.6f} {1:9.6f}'.format((x[i]+4)/5, yt[i]/5+0.18))
 
 
-#Center Body 
-f.write('\n999. 999.')
-for i in arange(len(x)-1,-1,-1):
-    f.write('\n{0:9.6f} {1:9.6f}'.format((x[i]+4.2)/5, -yt[i]/2.5+0.09))
-for i in arange(1,len(x)):
-    f.write('\n{0:9.6f} {1:9.6f}'.format((x[i]+4.2)/5, yt[i]/2.5+0.09))
+    #Center Body 
+    f.write('\n999. 999.')
+    for i in arange(len(x)-1,-1,-1):
+        f.write('\n{0:9.6f} {1:9.6f}'.format((x[i]+4.2)/5, -yt[i]/2.5+0.09))
+    for i in arange(1,len(x)):
+        f.write('\n{0:9.6f} {1:9.6f}'.format((x[i]+4.2)/5, yt[i]/2.5+0.09))
 
 
-#Main Body
-f.write('\n999. 999.')
-for i in arange(len(x)-1,-1,-1):
-    f.write('\n{0:9.6f} {1:9.6f}'.format(x[i], -yt[i]))
-for i in arange(1,len(x)):
-    f.write('\n{0:9.6f} {1:9.6f}'.format(x[i], yt[i]))
+    #Main Body
+    f.write('\n999. 999.')
+    for i in arange(len(x)-1,-1,-1):
+        f.write('\n{0:9.6f} {1:9.6f}'.format(x[i], -yt[i]))
+    for i in arange(1,len(x)):
+        f.write('\n{0:9.6f} {1:9.6f}'.format(x[i], yt[i]))
 
 
 fig, ax = subplots()
